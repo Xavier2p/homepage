@@ -1,0 +1,22 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/widgets
+
+- logo:
+    # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.png
+    icon: mdi-server-network
+
+- greeting:
+    text_size: 3xl
+    text: Pichou's Homelab
+
+- resources:
+    cpu: true
+    cputemp: true
+    uptime: true
+    memory: true
+    disk: /
+    # label: System
+
+# - resources:
+    # label: Storage

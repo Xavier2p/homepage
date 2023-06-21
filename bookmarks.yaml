@@ -1,0 +1,39 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Projects:
+    - Helix:
+        - abbr: LX
+          href: https://github.com/helix-medical
+    - fortran.rs:
+        - abbr: FRS
+          href: https://github.com/Xavier2p/fortran.rs
+    - gitsync:
+        - abbr: GSC
+          href: https://github.com/Xavier2p/gitsync
+    - infra-as-code:
+        - abbr: IaC
+          href: https://github.com/Xavier2p/infra-as-code
+
+- Documentation/Ideas:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+    - Homepage:
+        - abbr: HP
+          href: https://gethomepage.dev/
+
+- Infra:
+    - Docs:
+        - abbr: DOC
+          href: https://example.com
+    - Main Status:
+        - abbr: MST
+          href: http://status.rpi.srv/status/main
+    - External Status:
+        - abbr: EST
+          href: http://status.rpi.srv/status/main
+    - External Dashboard:
+        - abbr: EDB
+          href: http://external.rpi.srv

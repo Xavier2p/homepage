@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/settings
+
+title: Homepage | rpi.srv
+color: slate
+headerStyle: boxed
+target: _blank
+hideVersion: true
+theme: dark
+showState: true
+favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.png
+iconStyle: theme
+
+layout:
+  /network/:
+    style: row
+    icon: mdi-lan
+    columns: 4
+  /admin/:
+    icon: mdi-security-network
+  /media/:
+    icon: mdi-play-network

@@ -1,0 +1,103 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/services
+
+- /network/:
+    - AdGuardHome:
+        href: http://dns.rpi.srv
+        description: Custom DNS and Adblocker
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
+        ping: http://192.168.1.71:8080
+        server: rpi-server
+        container: Adguardhome
+        widget:
+          type: adguard
+          url: http://192.168.1.71:8080
+          username: sysadmin
+          password: sysadmin
+
+    - NGINX Reverse Proxy Manager:
+        href: http://proxy.rpi.srv
+        description: Reverse Proxy to use true URL
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png
+        ping: http://192.168.1.71:81
+        server: rpi-server
+        container: nginx-proxy-manager-sqlite 
+        widget:
+          type: npm
+          url: http://192.168.1.71:81
+          username: sysadmin@sysadmin.com
+          password: sysadmin
+
+    - Uptime Kuma:
+        href: http://status.rpi.srv
+        description: Uptime of my services  
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
+        ping: http://192.168.1.71:4040
+        server: rpi-server
+        container: uptime_kuma
+        widget:
+          type: uptimekuma
+          url: http://192.168.1.71:4040
+          slug: main
+
+    - Grafana:
+        href: http://monitoring.rpi.srv/d/Ss3q6hSZkw/raspberry-pi?kiosk
+        description: Monitor the host machine with this dashboard
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
+        ping: http://192.168.1.71:3000
+        server: rpi-server
+        container: monitoring-grafana
+        widget:
+          type: grafana
+          url: http://192.168.1.71:3000
+          username: admin
+          password: admin
+          fields: ["dashboards", "datasources", "totalalerts"]
+
+
+- /admin/:
+    - Dozzle:
+        href: http://logs.rpi.srv
+        description: Logs of my containers
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
+        ping: http://192.168.1.71:8888
+        server: rpi-server
+        container: dozzle
+
+    - PiVPN:
+        href: http://vpn.rpi.srv 
+        description: Portal to manage my VPN
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pivpn.png
+        ping: http://192.168.1.71:51281
+        server: rpi-server
+        container: pivpn-web
+    - Redbox:
+        href: http://192.168.1.1
+        description: The Home Box/Router
+        icon: https://static.s-sfr.fr/media/logo-redbysfr.png
+        ping: http://192.168.1.1
+
+- /media/:
+    - MaivyMotion:
+        href: http://maivymotion.rpi.srv
+        description: My Netflix, fully legal of course
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
+        ping: http://192.168.1.71:8096
+        server: rpi-server
+        container: jellyfin
+        widget:
+          type: jellyfin
+          key: ebd2be0873ee48899a798fcdd64cfcd7
+          url: http://192.168.1.71:8096
+          enableBlocks: true
+          enableNowPlaying: true
+          fields: ["movies", "series", "episodes"]
+
+# - /files/:
+#     - Samba:
+#         href: http://smb.rpi.srv
+
+# - /downloads/:
+#     - JDownloader:
+#         href: http://jdl.rpi.srv

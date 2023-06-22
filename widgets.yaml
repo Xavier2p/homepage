@@ -4,11 +4,11 @@
 
 - logo:
     # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.png
-    icon: mdi-server-network
+    icon: mdi-anvil
 
 - greeting:
     text_size: 3xl
-    text: Pichou's Homelab
+    text: Pichou's Forge
 
 - resources:
     cpu: true

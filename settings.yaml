@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/settings
 
-title: Homepage | rpi.srv
+title: Homepage | Forge
 color: slate
 headerStyle: boxed
 target: _blank

@@ -3,7 +3,7 @@
 # https://gethomepage.dev/en/configs/bookmarks
 
 - Projects:
-    - Helix:
+    - helix:
         - abbr: LX
           href: https://github.com/helix-medical
     - fortran.rs:

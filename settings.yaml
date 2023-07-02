@@ -13,11 +13,16 @@ favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.p
 iconStyle: theme
 
 layout:
+  /stats/:
+    style: row
+    columns: 2
+    icon: mdi-chart-bar-stacked
   /network/:
     style: row
     icon: mdi-lan
     columns: 4
   /admin/:
     icon: mdi-security-network
+    columns: 2
   /media/:
     icon: mdi-play-network

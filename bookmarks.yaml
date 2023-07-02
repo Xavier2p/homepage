@@ -20,6 +20,9 @@
           href: https://github.com/Xavier2p/system
 
 - Documentation/Ideas:
+    - GitHub:
+        - abbr: GH
+          href: https://github.com/Xavier2p
     - Reddit:
         - abbr: RE
           href: https://reddit.com/
@@ -31,12 +34,12 @@
     - Docs:
         - abbr: DOC
           href: https://example.com
-    - Main Status:
-        - abbr: MST
+    - Main Status Page:
+        - abbr: m-SP
           href: http://status.rpi.srv/status/main
-    - External Status:
-        - abbr: EST
+    - External Status Page:
+        - abbr: e-SP
           href: http://status.rpi.srv/status/main
     - External Dashboard:
-        - abbr: EDB
-          href: http://external.rpi.srv
+        - abbr: e-DB
+          href: http://public.rpi.srv

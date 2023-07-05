@@ -2,13 +2,13 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/services
 
-- /stats/:
+- stats/:
     - Uptime Kuma:
         href: http://status.rpi.srv
         description: Uptime of my services
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
         ping: http://192.168.1.71:4040
-        server: rpi-server
+        server: scariff
         container: uptime_kuma
         widget:
           type: uptimekuma
@@ -19,7 +19,7 @@
         description: Monitor the host machine with this dashboard
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
         ping: http://192.168.1.71:3000
-        server: rpi-server
+        server: scariff
         container: monitoring-grafana
         widget:
           type: grafana
@@ -27,26 +27,36 @@
           username: admin
           password: admin
           fields: ["dashboards", "datasources", "totalalerts"]
+    - Authentik:
+        href: http://auth.forge.local
+        description: Authentification services
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/authentik.png
+        ping: http://auth.forge.local
+        widget:
+          type: authentik
+          url: http://auth.forge.local
+          # hideErrors: true
 
-- /network/:
+- network/:
     - AdGuardHome:
         href: http://dns.rpi.srv
         description: Custom DNS and Adblocker
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
         ping: http://192.168.1.71:8080
-        server: rpi-server
+        server: scariff
         container: Adguardhome
         widget:
           type: adguard
           url: http://192.168.1.71:8080
           username: sysadmin
           password: sysadmin
-    - NGINX Reverse Proxy Manager:
+    - Traefik:
         href: http://proxy.rpi.srv
         description: Reverse Proxy to use true URL
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png
+        # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png
+        icon: https://dashboard.snapcraft.io/site_media/appmedia/2022/11/traefik.svg.png
         ping: http://192.168.1.71:81
-        server: rpi-server
+        server: scariff
         container: nginx-proxy-manager-sqlite
         widget:
           type: npm
@@ -57,53 +67,97 @@
         href: http://ddns.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cloudflare.png
         description: Dynamic Domain Name System
+        ping: http://ddns.forge.local
+        # widget:
+        #     type: cloudflared
+        #     accountid: 000000
+        #     tunnelid: 000000
+        #     key: qwertyuiop
+        #     hideErrors: true
     - Firewall:
         href: http://firewall.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pfsense.png
         description: Protect the whole Forge
+        ping: http://firewall.forge.local
+        widget:
+          type: pfsense
+          url: http://firewall.forge.local
+          username: username
+          password: password
+          wan: igb0
 
-- /admin/:
+- admin/:
+    - Portainer:
+        href: http://portainer.forge.local
+        description: Manage Docker Infrastructures
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
+        ping: http://portainer.forge.local
+        widget:
+          type: portainer
+          url: http://portainer.forge.local
+          env: 1
+          key: ptr_
     - Dozzle:
         href: http://logs.rpi.srv
         description: Logs of my containers
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
         ping: http://192.168.1.71:8888
-        server: rpi-server
+        server: scariff
         container: dozzle
     - PiVPN:
         href: http://vpn.rpi.srv
         description: Portal to manage my VPN
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pivpn.png
         ping: http://192.168.1.71:51281
-        server: rpi-server
+        server: scariff
         container: pivpn-web
     - Redbox:
-        href: http://192.168.1.1
+        href: http://kafrene.forge
         description: The Home Box/Router
         icon: https://static.s-sfr.fr/media/logo-redbysfr.png
         ping: http://192.168.1.1
 
-- /media/:
-    - MaivyMotion:
-        href: http://maivymotion.rpi.srv
+- media/:
+    - Jellyfin:
+        href: http://maivymotion.tv
         description: My Netflix, fully legal of course
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
-        # ping: http://192.168.1.71:8096
-        # server: rpi-server
-        # container: jellyfin
-        # widget:
-        #   type: jellyfin
-        #   key: ebd2be0873ee48899a798fcdd64cfcd7
-        #   url: http://192.168.1.71:8096
-        #   enableBlocks: true
-        #   enableNowPlaying: true
-        #   fields: ["movies", "series", "episodes"]
+        ping: http://maivymotion.tv
+        widget:
+          type: jellyfin
+          url: http://192.168.1.71:8096
+          enableBlocks: true
+          enableNowPlaying: true
+          fields: ["movies", "series", "episodes"]
     - JellySeerr:
-        href: http://vod.forge.local
+        href: http://ondemand.forge.local
         description: Download your Movies
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyseerr.png
+        ping: http://ondemand.forge.local
+        widget:
+          type: jellyseerr
+          url: http://ondemand.forge.local
+          key: fadsfsdfdsa
+    - FreshRSS:
+        href: http://news.forge.local
+        description: RSS Agregator
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/freshrss.png
+        ping: http://news.forge.local
+        widget:
+          type: freshrss
+          url: http://news.forge.local
+          username: user
+          password: pass
 
-- /downloads/:
+- downloads/:
+    - Jackett:
+        href: http://jackett.forge.local
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jackett.png
+        description: Indexers for media management
+        ping: http://jackett.forge.local
+        widget:
+          type: jackett
+          url: http://jackett.forge.local
     - JDownloader:
         href: http://jdl.rpi.srv
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jdownloader.png
@@ -112,29 +166,53 @@
         href: http://sonarr.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/sonarr.png
         description: TV Shows
+        ping: http://sonarr.forge.local
+        widget:
+          type: sonarr
+          url: http://sonarr.forge.local
+          key: ddddd
+          enableQueue: true
     - Radarr:
         href: http://radarr.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/radarr.png
         description: Movies
+        ping: http://radarr.forge.local
+        widget:
+          type: radarr
+          url: http://radarr.forge.local
+          key: ddddd
+          enableQueue: true
 
-- /cloud/:
+- cloud/:
     - NextCloud:
         href: http://drive.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
         description: No Google Drive, use NextCloud instead
+        ping: http://drive.forge.local
+        widget:
+          type: nextcloud
+          url: http://drive.forge.local
+          key: dsfdsffs
     - Only Office:
         href: http://office.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/onlyoffice.png
         description: Office Suite for Forge Users
+        ping: http://office.forge.local
     - PhotoPrism:
         href: http://photos.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png
         description: Apple Photos, but unlimited and free
+        ping: http://photos.forge.local
+        widget:
+          type: photoprism
+          url: http://photos.forge.local
     - Gitea:
         href: http://git.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitea.png
         description: Personal Git
+        ping: http://git.forge.local
     - Samba:
         href: http://smb.rpi.srv
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qnap-alt.png
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/truenas.png
         description: NAS System
+        ping: http://smb.rpi.srv

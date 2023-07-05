@@ -24,11 +24,14 @@
         - abbr: GH
           href: https://github.com/Xavier2p
     - Reddit:
-        - abbr: RE
+        - abbr: /r/
           href: https://reddit.com/
     - Homepage:
         - abbr: HP
           href: https://gethomepage.dev/
+    - Caddy Server:
+        - abbr: CS
+          href: https://caddyserver.com/docs
 
 - Infra:
     - Docs:

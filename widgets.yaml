@@ -3,20 +3,18 @@
 # https://gethomepage.dev/en/configs/widgets
 
 - logo:
-    # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.png
-    icon: mdi-anvil
+    icon: https://github.com/Xavier2p/assets/blob/main/forge-logos/cyan.png?raw=true
 
 - greeting:
     text_size: 3xl
-    text: Pichou's Forge
-
-- resources:
-    cpu: true
-    cputemp: true
-    uptime: true
-    memory: true
-    disk: /
-    # label: System
+    text: Pichou's /forge - Admin Dashboard
+# - resources:
+# cpu: true
+# cputemp: true
+# uptime: true
+# memory: true
+# disk: /
+# label: System
 
 # - resources:
-    # label: Storage
+# label: Storage

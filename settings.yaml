@@ -2,27 +2,33 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/settings
 
-title: Homepage | Forge
+title: Homepage - /forge
 color: slate
 headerStyle: boxed
 target: _blank
 hideVersion: true
 theme: dark
 showState: true
-favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/raspberrypi.png
+favicon: https://github.com/Xavier2p/assets/blob/main/forge-logos/colors.png?raw=true
 iconStyle: theme
 
 layout:
-  /stats/:
+  stats/:
     style: row
-    columns: 2
-    icon: mdi-chart-bar-stacked
-  /network/:
+    columns: 3
+    icon: mdi-network-pos
+  network/:
     style: row
     icon: mdi-lan
     columns: 4
-  /admin/:
+  cloud/:
+    icon: mdi-wan
+    style: row
+    columns: 4
+  admin/:
     icon: mdi-security-network
     columns: 2
-  /media/:
+  media/:
     icon: mdi-play-network
+  downloads/:
+    icon: mdi-download-network

@@ -216,3 +216,8 @@
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/truenas.png
         description: NAS System
         ping: http://smb.rpi.srv
+    - KASM Workspaces:
+        href: http://kasm.forge.local
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kasm.png
+        description: Sandboxed OSes
+        ping: http://kasm.forge.local

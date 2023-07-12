@@ -42,7 +42,7 @@
           href: http://status.rpi.srv/status/main
     - External Status Page:
         - abbr: e-SP
-          href: http://status.rpi.srv/status/main
+          href: http://status.rpi.srv/status/external
     - External Dashboard:
         - abbr: e-DB
           href: http://public.rpi.srv

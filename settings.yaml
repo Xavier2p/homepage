@@ -11,6 +11,7 @@ theme: dark
 showState: true
 favicon: https://github.com/Xavier2p/assets/blob/main/forge-logos/colors.png?raw=true
 iconStyle: theme
+hideErrors: true
 
 layout:
   stats/:

@@ -50,8 +50,8 @@
           username: sysadmin
           password: sysadmin
     - Traefik:
-        # href: http://proxy.rpi.srv
-        href: http://192.168.1.71:81
+        href: http://proxy.rpi.srv
+        # href: http://192.168.1.71:81
         description: Reverse Proxy to use true URL
         icon: https://dashboard.snapcraft.io/site_media/appmedia/2022/11/traefik.svg.png
         ping: http://192.168.1.71:81

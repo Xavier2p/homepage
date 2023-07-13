@@ -29,9 +29,9 @@
     - Homepage:
         - abbr: HP
           href: https://gethomepage.dev/
-    - Caddy Server:
-        - abbr: CS
-          href: https://caddyserver.com/docs
+    - Traefik:
+        - abbr: ae
+          href: https://doc.traefik.io/traefik/
 
 - Infra:
     - Docs:

@@ -9,7 +9,7 @@
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
         ping: http://192.168.1.71:4040
         server: scariff
-        container: uptime_kuma
+        container: uptime-kuma
         widget:
           type: uptimekuma
           url: http://192.168.1.71:4040
@@ -35,34 +35,31 @@
         widget:
           type: authentik
           url: http://auth.forge.local
-          # hideErrors: true
 
 - network/:
     - AdGuardHome:
         href: http://dns.rpi.srv
         description: Custom DNS and Adblocker
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
-        ping: http://192.168.1.71:8080
+        ping: http://192.168.1.71:1010
         server: scariff
-        container: Adguardhome
+        container: adguard-home
         widget:
           type: adguard
-          url: http://192.168.1.71:8080
+          url: http://192.168.1.71:1010
           username: sysadmin
           password: sysadmin
     - Traefik:
         # href: http://proxy.rpi.srv
-        href: http://192.168.1.71:8081
+        href: http://192.168.1.71:81
         description: Reverse Proxy to use true URL
-        # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png
         icon: https://dashboard.snapcraft.io/site_media/appmedia/2022/11/traefik.svg.png
-        # ping: http://192.168.1.71:81
-        ping: http://192.168.1.71:8081
+        ping: http://192.168.1.71:81
         server: scariff
         container: traefik
         widget:
           type: traefik
-          url: http://192.168.1.71:8081
+          url: http://192.168.1.71:81
         #   username: sysadmin@sysadmin.com
         #   password: sysadmin
     - ddns:
@@ -100,7 +97,7 @@
           env: 1
           key: ptr_
     - Dozzle:
-        href: http://logs.rpi.srv
+        href: http://dozzle.rpi.srv
         description: Logs of my containers
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
         ping: http://192.168.1.71:8888

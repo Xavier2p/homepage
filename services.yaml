@@ -51,18 +51,20 @@
           username: sysadmin
           password: sysadmin
     - Traefik:
-        href: http://proxy.rpi.srv
+        # href: http://proxy.rpi.srv
+        href: http://192.168.1.71:8081
         description: Reverse Proxy to use true URL
         # icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png
         icon: https://dashboard.snapcraft.io/site_media/appmedia/2022/11/traefik.svg.png
-        ping: http://192.168.1.71:81
+        # ping: http://192.168.1.71:81
+        ping: http://192.168.1.71:8081
         server: scariff
-        container: nginx-proxy-manager-sqlite
+        container: traefik
         widget:
-          type: npm
-          url: http://192.168.1.71:81
-          username: sysadmin@sysadmin.com
-          password: sysadmin
+          type: traefik
+          url: http://192.168.1.71:8081
+        #   username: sysadmin@sysadmin.com
+        #   password: sysadmin
     - ddns:
         href: http://ddns.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cloudflare.png
@@ -221,3 +223,10 @@
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kasm.png
         description: Sandboxed OSes
         ping: http://kasm.forge.local
+    - Code server:
+        description: Edit configuration files
+        href: http://code.rpi.srv
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vscode.png
+        ping: http://192.168.1.71:8443
+        server: scariff
+        container: code-server

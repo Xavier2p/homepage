@@ -47,8 +47,8 @@
         widget:
           type: adguard
           url: http://192.168.1.71:1010
-          username: sysadmin
-          password: sysadmin
+          username: api
+          password: password
     - Traefik:
         href: http://proxy.rpi.srv
         # href: http://192.168.1.71:81

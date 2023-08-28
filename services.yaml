@@ -149,6 +149,11 @@
           password: pass
 
 - downloads/:
+    - MeTube:
+        href: http://ytdl.rpi.srv
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
+        description: Downloads YouTube Content
+        ping: http://192.168.1.71:8081
     - Jackett:
         href: http://jackett.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jackett.png

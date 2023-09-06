@@ -46,7 +46,7 @@
           type: adguard
           url: http://adguard-home:80
           username: api
-          password: {{ HOMEPAGE_VAR_ADGUARD_API_PASSWORD }}
+          password: {{HOMEPAGE_VAR_ADGUARD_API_PASSWORD}}
     - Traefik:
         href: https://proxy.xavier2p.fr
         description: Reverse Proxy to use true URL
@@ -64,9 +64,9 @@
         ping: https://one.dash.cloudflare.com/
         widget:
             type: cloudflared
-            accountid: {{ HOMEPAGE_VAR_CLOUDFLARE_USER_ID }}
-            tunnelid: {{ HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID }}
-            key: {{ HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN }}
+            accountid: {{HOMEPAGE_VAR_CLOUDFLARE_USER_ID}}
+            tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
+            key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
     - Firewall:
         href: http://firewall.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pfsense.png

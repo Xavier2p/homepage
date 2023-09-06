@@ -4,29 +4,27 @@
 
 - stats/:
     - Uptime Kuma:
-        href: http://status.rpi.srv
+        href: https://status.xavier2p.fr
         description: Uptime of my services
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
-        ping: http://192.168.1.71:4040
+        ping: https://status.xavier2p.fr/
         server: scariff
         container: uptime-kuma
         widget:
           type: uptimekuma
-          url: http://192.168.1.71:4040
+          url: http://uptime-kuma:3001
           slug: main
     - Grafana:
-        href: http://monitoring.rpi.srv/d/Ss3q6hSZkw/raspberry-pi?kiosk
+        href: https://monitoring.xavier2p.fr/d/Ss3q6hSZkw/raspberry-pi?kiosk
         description: Monitor the host machine with this dashboard
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
-        ping: http://192.168.1.71:3000
-        server: scariff
-        container: monitoring-grafana
-        widget:
-          type: grafana
-          url: http://192.168.1.71:3000
-          username: admin
-          password: admin
-          fields: ["dashboards", "datasources", "totalalerts"]
+        ping: https://monitoring.xavier2p.fr
+        # server: scariff
+        # container: monitoring-grafana
+        # widget:
+        #   type: grafana
+        #   url: http://grafana:3000
+        #   fields: ["dashboards", "datasources", "totalalerts"]
     - Authentik:
         href: http://auth.forge.local
         description: Authentification services
@@ -38,41 +36,37 @@
 
 - network/:
     - AdGuardHome:
-        href: http://dns.rpi.srv
+        href: https://dns.xavier2p.fr
         description: Custom DNS and Adblocker
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
-        ping: http://192.168.1.71:1010
+        ping: https://dns.xavier2p.fr
         server: scariff
         container: adguard-home
         widget:
           type: adguard
-          url: http://192.168.1.71:1010
+          url: http://adguard-home:80
           username: api
-          password: password
+          password: $ADGUARD_API_PASSWORD
     - Traefik:
-        href: http://proxy.rpi.srv
-        # href: http://192.168.1.71:81
+        href: https://proxy.xavier2p.fr
         description: Reverse Proxy to use true URL
         icon: https://dashboard.snapcraft.io/site_media/appmedia/2022/11/traefik.svg.png
-        ping: http://192.168.1.71:81
+        ping: https://proxy.xavier2p.fr
         server: scariff
         container: traefik
         widget:
           type: traefik
-          url: http://192.168.1.71:81
-        #   username: sysadmin@sysadmin.com
-        #   password: sysadmin
-    - ddns:
-        href: http://ddns.forge.local
+          url: http://traefik:8080
+    - Cloudflared:
+        href: https://one.dash.cloudflare.com/
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cloudflare.png
         description: Dynamic Domain Name System
-        ping: http://ddns.forge.local
-        # widget:
-        #     type: cloudflared
-        #     accountid: 000000
-        #     tunnelid: 000000
-        #     key: qwertyuiop
-        #     hideErrors: true
+        ping: https://one.dash.cloudflare.com/
+        widget:
+            type: cloudflared
+            accountid: $CLOUDFLARE_USER_ID
+            tunnelid: $CLOUDFLARE_TUNNEL_ID
+            key: $CLOUDFLARE_TUNNEL_TOKEN
     - Firewall:
         href: http://firewall.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pfsense.png
@@ -97,19 +91,19 @@
           env: 1
           key: ptr_
     - Dozzle:
-        href: http://dozzle.rpi.srv
+        href: http://dozzle.xavier2p.fr
         description: Logs of my containers
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
         ping: http://192.168.1.71:8888
         server: scariff
         container: dozzle
-    - PiVPN:
-        href: http://vpn.rpi.srv
-        description: Portal to manage my VPN
-        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pivpn.png
-        ping: http://192.168.1.71:51281
-        server: scariff
-        container: pivpn-web
+    # - PiVPN:
+    #     href: http://vpn.xavier2p.fr
+    #     description: Portal to manage my VPN
+    #     icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pivpn.png
+    #     ping: http://192.168.1.71:51281
+    #     server: scariff
+    #     container: pivpn-web
     - Redbox:
         href: http://kafrene.forge
         description: The Home Box/Router
@@ -124,7 +118,7 @@
         ping: http://maivymotion.tv
         widget:
           type: jellyfin
-          url: http://192.168.1.71:8096
+          url: http://jellyfin:8096
           enableBlocks: true
           enableNowPlaying: true
           fields: ["movies", "series", "episodes"]
@@ -150,10 +144,12 @@
 
 - downloads/:
     - MeTube:
-        href: http://ytdl.rpi.srv
+        href: https://ytdl.xavier2p.fr
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
         description: Downloads YouTube Content
-        ping: http://192.168.1.71:8081
+        ping: https://ytdl.xavier2p.fr
+        server: scariff
+        container: me-tube
     - Jackett:
         href: http://jackett.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jackett.png
@@ -163,9 +159,10 @@
           type: jackett
           url: http://jackett.forge.local
     - JDownloader:
-        href: http://jdl.rpi.srv
+        href: http://jdl.xavier2p.fr
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jdownloader.png
         description: Download all Internet
+        ping: http://jdl.xavier2p.fr
     - Sonarr:
         href: http://sonarr.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/sonarr.png
@@ -216,10 +213,10 @@
         description: Personal Git
         ping: http://git.forge.local
     - Samba:
-        href: http://smb.rpi.srv
+        href: http://smb.xavier2p.fr
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/truenas.png
         description: NAS System
-        ping: http://smb.rpi.srv
+        ping: http://smb.xavier2p.fr
     - KASM Workspaces:
         href: http://kasm.forge.local
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kasm.png
@@ -227,8 +224,8 @@
         ping: http://kasm.forge.local
     - Code server:
         description: Edit configuration files
-        href: http://code.rpi.srv
+        href: http://code.xavier2p.fr
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vscode.png
-        ping: http://192.168.1.71:8443
+        ping: http://code.xavier2p.fr
         server: scariff
         container: code-server

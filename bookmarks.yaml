@@ -40,15 +40,18 @@
           href: https://doc.traefik.io/traefik/
 
 - Infra:
+    - Cloudflare:
+        - abbr: CFR
+          href: https://dash.cloudflare.com/
     - Docs:
         - abbr: DOC
           href: https://example.com
     - Main Status Page:
         - abbr: m-SP
-          href: http://status.rpi.srv/status/main
+          href: https://status.xavier2p.fr/status/main
     - External Status Page:
         - abbr: e-SP
-          href: http://status.rpi.srv/status/external
+          href: https://status.xavier2p.fr/status/external
     - External Dashboard:
         - abbr: e-DB
-          href: http://public.rpi.srv
+          href: https://public.xavier2p.fr

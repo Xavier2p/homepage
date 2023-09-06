@@ -62,6 +62,8 @@
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cloudflare.png
         description: Dynamic Domain Name System
         ping: https://one.dash.cloudflare.com/
+        server: scariff
+        container: clouflared
         widget:
             type: cloudflared
             accountid: {{HOMEPAGE_VAR_CLOUDFLARE_USER_ID}}

@@ -63,7 +63,7 @@
         description: Dynamic Domain Name System
         ping: https://one.dash.cloudflare.com/
         server: scariff
-        container: clouflared
+        container: cloudflared
         widget:
             type: cloudflared
             accountid: {{HOMEPAGE_VAR_CLOUDFLARE_USER_ID}}

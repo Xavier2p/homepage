@@ -15,16 +15,18 @@
           url: http://uptime-kuma:3001
           slug: main
     - Grafana:
-        href: https://monitoring.xavier2p.fr/d/Ss3q6hSZkw/raspberry-pi?kiosk
+        href: https://monitoring.xavier2p.fr/
         description: Monitor the host machine with this dashboard
         icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
-        ping: https://monitoring.xavier2p.fr
-        # server: scariff
-        # container: monitoring-grafana
-        # widget:
-        #   type: grafana
-        #   url: http://grafana:3000
-        #   fields: ["dashboards", "datasources", "totalalerts"]
+        ping: https://monitoring.xavier2p.fr/
+        server: scariff
+        container: grafana
+        widget:
+          type: grafana
+          url: http://grafana:3000
+          fields: ["dashboards", "datasources", "totalalerts"]
+          username: {{HOMEPAGE_VAR_GF_USERNAME}}
+          password: {{HOMEPAGE_VAR_GF_PASSWORD}}
     - Authentik:
         href: http://auth.forge.local
         description: Authentification services
